@@ -1,0 +1,126 @@
+
+$shine: #B2E4F6;
+$light-blue: #89E5F6;
+$dark-blue: #08517A;
+$med-blue: #6AC0D6;
+$background: #010F19;
+
+body{
+  background: $background;
+  
+}
+.container{//change this for screen ratios
+// border: white 2px solid;
+  height: 40vh;
+  width: 60vh;
+  margin:auto;
+  margin-top: 30vh;
+  position: relative;
+ // border-radius: 50%;
+  //overflow: hidden;
+}
+.left{
+  width: 50%;
+  left: 0;
+  position: absolute;
+}
+.right{
+   width: 50%;
+  left: 50%;
+  position: absolute;
+}
+.diamond{
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+}
+.crystal{
+ 
+}
+.crystal1{
+  position: absolute;
+  height: 60%;
+ // background: $light-blue;
+  width: 10%;
+  left: 30%;
+  top: 40%;
+   .diamond{
+    background: $med-blue;
+    height:30%;
+  }
+  .left{
+    background: $light-blue;
+    height: 85%;
+    top: 15%;
+  }
+  .right{
+    background: $light-blue;
+    height: 85%;
+    top: 15%;
+  }
+}
+.crystal2{
+  position: absolute;
+  height: 100%;
+ // background: $light-blue;
+  width: 20%;
+  left: 40%;
+  .diamond{
+    background: $dark-blue;
+    height:40%;
+  }
+  .left{
+    background: $med-blue;
+    height: 80%;
+    top: 20%;
+  }
+  .right{
+    background: $light-blue;
+    height: 80%;
+    top: 20%;
+  }
+}
+
+.crystal3{
+  position: absolute;
+  height: 70%;
+  //background: $dark-blue;
+  width: 10%;
+  left: 60%;
+  top: 30%;
+   .diamond{
+    background: $med-blue;
+    height:30%;
+  }
+  .left{
+    background: $dark-blue;
+    height: 85%;
+    top: 15%;
+  }
+  .right{
+    background: $dark-blue;
+    height: 85%;
+    top: 15%;
+  }
+}
+.shine{
+  width: 100%;
+  height: 20%;
+  background: $shine;
+  top: 10%;
+  left: 0;
+  position: absolute;
+  animation: shineUp 2s infinite;
+}
+
+@keyframes shineUp{
+  0%{
+    top: 100%;
+  }
+  100%{
+    top: -20%;
+  }
+}
