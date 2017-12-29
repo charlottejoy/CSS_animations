@@ -1,0 +1,225 @@
+$handle: #0A606C;
+$sun1: #FC8401;
+$sun2:#ffa502;
+$sun3:#ffc700;
+$sun4: #ffe50e;
+$shine: #ffec56;
+$accent1: #778813;
+$accent2: white;
+$background: #86C8CF;
+$light-background:#cce8eb;
+$flat-circle: 50% 50% 0 0;
+$sun-in:80%;
+$sun-space: 10%;
+$animation-properties: 1s infinite; //alternate;
+body{
+  background:$background;
+  overflow: hidden;
+}
+@media (min-aspect-ratio: 1/8) {
+  .portrait-spacer {
+    height: 25vw;
+  }
+}
+@media (min-aspect-ratio: 5/4) {
+  .portrait-spacer {
+    height: 0px;
+  }
+}
+.container{
+  position: relative;
+  margin:auto;
+  width: 90vw;
+    height: 45vw;
+
+}
+.cup{
+  position: absolute;
+  width: 40%;
+  height: 80%;
+  top: 10%;
+  left: 30%;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.top{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: $flat-circle;
+}
+.sun1{
+    position: absolute;
+  top:0;
+  left: 0;
+  background: $sun1;
+  width: 100%;
+  height: 50%;
+  border-radius: $flat-circle;
+animation: glow1 $animation-properties;
+}
+.sun2{
+  position: absolute;
+  background:$sun2;
+  width: $sun-in;
+    height:$sun-in*2;
+    top:$sun-space*2;
+    left:$sun-space;
+    border-radius: $flat-circle;
+ animation: glow2 $animation-properties;
+}
+.sun3{
+  position: absolute;
+  width: $sun-in;
+  height: $sun-in;
+  top: $sun-space;
+  left: $sun-space;
+  border-radius: $flat-circle;
+  background: $sun3;
+ animation: glow3 $animation-properties;
+}
+.sun4{
+  border-radius: $flat-circle;
+  width: $sun-in*.875;
+  height: $sun-in*.875;
+  top: $sun-space*1.5;
+    left:$sun-space*1.5;
+  background: $sun4;
+  position: absolute;
+ animation: glow4 $animation-properties;
+}
+
+
+@keyframes glow1{
+ 0%, 64%,81%, 100%{
+    background: $sun1;
+  }
+  65%, 80%{
+ background: $shine;   
+  }
+  
+}
+@keyframes glow2{
+ 0%, 49%, 66%, 100%{
+    background: $sun2;
+  }
+  50%, 65% {
+ background: $shine;   
+  }
+}
+
+@keyframes glow3{
+ 0%, 34%, 51%, 100%{
+    background: $sun3;
+  }
+  35%, 50% {
+ background: $shine;   
+  }
+}
+
+@keyframes glow4{
+  0%, 19%, 36%, 100%{
+    background: $sun4;
+  }
+  20%, 35%{
+ background: $shine;   
+  }
+}
+.handle{
+  position: absolute;
+  top: 50%;
+  left: 62%; 
+  height: 24%;
+  width: 15%;
+  background: $handle;
+  border-radius: 0 50% 50% 0;
+}
+.inset{
+  position: absolute;
+  top: 33.3%;
+    left: 30%; 
+    height: 33.3%;
+  width: 50%;
+  background: $handle;
+  border-radius: 0 40% 40% 0;
+  background: $background;
+}
+.bottom{
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top: 50%;
+  left: 0;
+}
+.handle2{
+  background:$handle;
+  position: absolute;
+  top: 0;
+    left: 0; 
+    height: 20%;
+  width: 100%;
+  
+}
+.band1{
+   position: absolute;
+   height: 20%;
+  width: 100%;
+  background: $accent2;
+  top: 20%;
+  display: flex;
+  display: -webkit-flex;
+ justify-content: space-between;
+}
+.dot{
+  width: 8%;
+   height: 80%;
+  border-radius: 50%;
+  margin-top: 1%;
+}
+.colour1{
+  background: $accent1;
+}
+.colour2{
+  background: $background;
+}
+.band2{
+  position: absolute;
+   height: 20%;
+  width: 100%;
+  background: $background;
+  top: 40%;
+  left: 0;
+}
+.band3{
+  position: absolute;
+   height: 20%;
+  width: 100%;
+   left: 0;
+  background: $accent1;
+  top: 60%;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+ 
+}
+
+.triangle{
+  width:0;
+  height: 0;
+  border-left: 3.6vw solid white;
+  border-right: 3.6vw solid white;
+  border-top: 3.6vw solid transparent;
+  // container*height/width of cup* height/width as % of cup* width/height% (/2) for triangle sides
+}
+.band4{
+  position: absolute;
+   height: 20%;
+  width: 100%;
+  background: $handle;
+  top: 80%;
+  left: 0;
+}
