@@ -1,7 +1,7 @@
 # Just loaders
 
 ## CSS Animations
-- Crystal Loader, made after one at [Coding Artist] (https://coding-artist.teachable.com/courses/155435/lectures/2316823#/questions/1)
+- Crystal Loader, made after one at [Coding Artist](https://coding-artist.teachable.com/courses/155435/lectures/2316823#/questions/1)
 
 
 ![image](https://user-images.githubusercontent.com/17909419/34421254-32c20aae-ebdc-11e7-9ba3-95358c256c6c.png)
