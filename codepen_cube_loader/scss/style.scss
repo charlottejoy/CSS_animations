@@ -1,0 +1,346 @@
+$short-side: 6%;
+$long-side:50%;
+  $med-side: $long-side/2;
+$angle: 26.57deg;
+$animation: 4s linear infinite;
+$dot: #76daff;//blue
+$dot-size: 25%;
+$yellow:#ffdd40;
+$purple: #ae63e4;
+@mixin skew($x, $y){
+ -ms-transform: skew($x, $y); /* IE 9 */
+    -webkit-transform: skew($x, $y); /* Safari */
+    transform: skew($x, $y); /* Standard syntax */
+}
+
+body, html{
+  background: $yellow;
+  display: flex;
+ justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.circle{
+  //update h+w for aspect ratio
+  width: 44vh;
+  height: 44vh;
+  border-radius: 50%;
+  border: black 4vh solid;
+  background: white;
+  //margin: auto;
+  //margin-top: 8vh;
+  position: relative;
+  box-sizing: border-box;
+}
+.circle-clone{
+//for dots going around circle
+}
+.container{
+  width: 80%;
+  height: 80%;
+ position: absolute;
+  top: 20%;
+  left: 10%;
+  overflow: hidden;
+}
+
+.line{
+  position: absolute;
+  background: black;
+  overflow: hidden;
+ //border-radius: 5%;
+}
+/*.left{
+  left: 0;
+}*/
+.dot{
+  background: $dot;
+  border-radius: 5%;
+  width: $dot-size;
+  height: $dot-size;
+ 
+  position: absolute;
+}
+
+.circle-dot{
+  background: $purple;
+  
+  position: absolute;
+}
+.vertical{
+  height:$med-side;
+  width: $short-side;
+ 
+  //border: 2px blue solid;
+}
+.vertical-left{
+ @extend .vertical;
+  left: 0;
+  top: $med-side + $short-side/2;
+   z-index: 3;
+  .dot-up{
+    @extend .dot;
+     left: 50%- ($dot-size/2);
+    animation: dot-move1-down $animation;
+  }
+  .dot-down{
+      @extend .dot;
+    left: 50%- ($dot-size/2);
+    animation: dot-move1-up $animation;
+  }
+}
+.vertical-right{
+  @extend .vertical;
+  left: 100%- $short-side;
+  top: $med-side  + $short-side;
+  .dot-up{
+    @extend .dot;
+   animation:  dot-move4-up $animation;
+     left: 50%- ($dot-size/2);
+  }
+  .dot-down{
+    @extend .dot;
+     left: 50%- ($dot-size/2);
+   animation:  dot-move4-down $animation;
+  }
+    z-index: 3;
+}
+.middle{
+  left: 50%-($short-side/2);
+    z-index: 1;
+}
+.upper{
+  top: $short-side/2;
+  
+}
+.lower{
+  top: $med-side*2;// + $short-side/2;
+}
+.upper, .lower{
+  .dot-up{
+    @extend .dot;
+    animation: dot-move3-up $animation;
+   left: 50%- ($dot-size/2);}
+  .dot-down{
+    @extend .dot;
+    animation: dot-move3-down $animation;
+     left: 50%- ($dot-size/2);
+  }
+}
+.horizontal{
+  width: $long-side;
+  height: $short-side;
+ z-index: 2;
+}
+.top-back-left{
+  left: 0;
+   top: 0;
+ // transform: rotate(-35deg);
+  // @include skew(0, -35deg);
+   //transform-origin: 0% 0%;
+  @include skew(0, -$angle);
+   transform-origin: 100% 0%;
+  .dot{
+  animation: dot-move2-left $animation;
+     top: 50% - ($dot-size/2);
+  }
+}
+.top-front-left{
+   left: 0;
+  top:  $long-side;//+ $short-side/2;
+  // transform: rotate(35deg) skewX(35deg);
+ // @include skew(0deg, 35deg);
+   //transform-origin:0% 0%;
+    @include skew(0deg, $angle);
+   transform-origin:100% 0%;
+//  border: 2px red solid;
+   .dot{
+  animation: dot-move2-left $animation;
+     top: 50% - ($dot-size/2);
+  }
+ 
+}
+.top-back-right{
+  left: 100%-$long-side;
+   top:0;
+ //  transform: rotate(35deg);
+ //  @include skew(0deg, 35deg);
+   //transform-origin: 100% 100%;
+   @include skew(0deg, $angle);
+   transform-origin: 0% 100%;
+  .dot{
+    animation: dot-move3-left $animation;
+    top: 50% - ($dot-size/2);
+  }
+}
+.top-front-right{
+ left: 100%-$long-side;
+  top: $long-side;//+ $short-side/2;
+   //transform: rotate(-35deg) skewX(-35deg);;
+ //  @include skew(0deg, -35deg);
+   //transform-origin: 100% 100%;  
+   @include skew(0deg, -$angle);
+   transform-origin: 0% 100%; 
+  // border: 2px red solid;
+  .dot{
+    animation: dot-move3-left $animation;
+    top: 50% - ($dot-size/2);
+  }
+}
+.bottom-back-left{
+  top:$long-side*.5;
+   left:$short-side/2;
+ // transform: rotate(-35deg);
+  // @include skew(0, -35deg);
+   //transform-origin: 0% 0%;
+  @include skew(0, -$angle);
+   transform-origin: 100% 0%;
+  //border: 2px yellow solid;
+   .dot{
+  animation: dot-move2-left $animation;
+     top: 50% - ($dot-size/2);
+  }
+}
+.bottom-front-left{
+     left: 0;
+top: $med-side*3;
+  // transform: rotate(35deg) skewX(35deg);
+ // @include skew(0deg, 35deg);
+   //transform-origin:0% 0%;
+    @include skew(0deg, $angle);
+   transform-origin:100% 0%;
+  .dot{
+  animation: dot-move2-left $animation;
+    top: 50% - ($dot-size/2);
+  }
+}
+.bottom-back-right{
+  top: $long-side;
+   left: 50%;
+ //  transform: rotate(35deg);
+ //  @include skew(0deg, 35deg);
+   //transform-origin: 100% 100%;
+   @include skew(0deg, $angle);
+   transform-origin: 100% 100%;
+ //  border: 2px green solid;
+  .dot{
+    animation: dot-move3-left $animation;
+    top: 50% - ($dot-size/2);
+  }
+}
+.bottom-front-right{
+ left: 100%-$long-side;
+  top: $med-side*3; 
+   @include skew(0deg, -$angle);
+   transform-origin: 0% 100%; 
+  .dot{
+    animation: dot-move3-left $animation;
+    top: 50% - ($dot-size/2);
+  }
+}
+@keyframes dot-move1-up{
+  0%, 12%{
+      visibility: hidden;
+  }
+    12.5%{
+       visibility: visible;
+  top: 50%;  
+  }
+  25%{
+    top: 0%;
+  }
+  26%, 100%{
+    visibility: hidden;
+  }
+}
+@keyframes dot-move1-down{
+    0%, 12%{
+      visibility: hidden;
+  }
+   12.5%{
+     visibility: visible;
+  top: 50%;  
+  }
+  25%{
+    top: 100%;
+  }
+  26%, 100%{
+    visibility: hidden;
+  }
+}
+
+@keyframes dot-move2-left{
+  0%, 25%{
+  left: -$dot-size;  
+  }
+  50%, 100%{
+    left: 100%;
+  }
+}
+
+@keyframes dot-move3-down{
+  0%, 50%{
+    top: -$dot-size;
+  }
+  62.5%{
+    top: 50%;
+  }
+  63%, 100%{
+     visibility: hidden;
+  }
+}
+@keyframes dot-move3-up{
+  0%, 50%{
+    top: 100%}
+  62.5%{
+    top: 50%;
+  }
+   63%, 100%{
+    visibility: hidden;
+  }
+}
+
+@keyframes dot-move3-left{
+  0%, 50%{
+    left: -$dot-size;
+  }
+  75%, 100%{
+    left: 100%;
+  }
+  
+}
+
+@keyframes dot-move4-down{
+ 0%,  75%{
+    top: -$dot-size;}
+ 
+     87.5%{
+      top: 50%;
+  }
+  86%, 100%{
+    visibility: hidden;
+  }
+}
+
+@keyframes dot-move4-up{
+ 0%,  75%{
+    top: 100%;
+  }
+  87.5%{
+    top: 50%;
+  }
+  86%, 100%{
+    visibility: hidden;
+  }
+}
+
+@keyframes circling{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+     transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,338 @@
+body, html {
+  background: #ffdd40;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.circle {
+  width: 44vh;
+  height: 44vh;
+  border-radius: 50%;
+  border: black 4vh solid;
+  background: white;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  overflow: hidden;
+}
+
+.line {
+  position: absolute;
+  background: black;
+  overflow: hidden;
+}
+
+/*.left{
+  left: 0;
+}*/
+.dot, .vertical-left .dot-up, .vertical-left .dot-down, .vertical-right .dot-up, .vertical-right .dot-down, .upper .dot-up, .lower .dot-up, .upper .dot-down, .lower .dot-down {
+  background: #76daff;
+  border-radius: 5%;
+  width: 25%;
+  height: 25%;
+  position: absolute;
+}
+
+.circle-dot {
+  background: #ae63e4;
+  position: absolute;
+}
+
+.vertical, .vertical-left, .vertical-right {
+  height: 25%;
+  width: 6%;
+}
+
+.vertical-left {
+  left: 0;
+  top: 28%;
+  z-index: 3;
+}
+.vertical-left .dot-up {
+  left: 37.5%;
+  animation: dot-move1-down 4s linear infinite;
+}
+.vertical-left .dot-down {
+  left: 37.5%;
+  animation: dot-move1-up 4s linear infinite;
+}
+
+.vertical-right {
+  left: 94%;
+  top: 31%;
+  z-index: 3;
+}
+.vertical-right .dot-up {
+  animation: dot-move4-up 4s linear infinite;
+  left: 37.5%;
+}
+.vertical-right .dot-down {
+  left: 37.5%;
+  animation: dot-move4-down 4s linear infinite;
+}
+
+.middle {
+  left: 47%;
+  z-index: 1;
+}
+
+.upper {
+  top: 3%;
+}
+
+.lower {
+  top: 50%;
+}
+
+.upper .dot-up, .lower .dot-up {
+  animation: dot-move3-up 4s linear infinite;
+  left: 37.5%;
+}
+.upper .dot-down, .lower .dot-down {
+  animation: dot-move3-down 4s linear infinite;
+  left: 37.5%;
+}
+
+.horizontal {
+  width: 50%;
+  height: 6%;
+  z-index: 2;
+}
+
+.top-back-left {
+  left: 0;
+  top: 0;
+  -ms-transform: skew(0, -26.57deg);
+  /* IE 9 */
+  -webkit-transform: skew(0, -26.57deg);
+  /* Safari */
+  transform: skew(0, -26.57deg);
+  /* Standard syntax */
+  transform-origin: 100% 0%;
+}
+.top-back-left .dot, .top-back-left .vertical-left .dot-up, .vertical-left .top-back-left .dot-up, .top-back-left .vertical-left .dot-down, .vertical-left .top-back-left .dot-down, .top-back-left .vertical-right .dot-up, .vertical-right .top-back-left .dot-up, .top-back-left .vertical-right .dot-down, .vertical-right .top-back-left .dot-down, .top-back-left .upper .dot-up, .upper .top-back-left .dot-up, .top-back-left .lower .dot-up, .lower .top-back-left .dot-up, .top-back-left .upper .dot-down, .upper .top-back-left .dot-down, .top-back-left .lower .dot-down, .lower .top-back-left .dot-down {
+  animation: dot-move2-left 4s linear infinite;
+  top: 37.5%;
+}
+
+.top-front-left {
+  left: 0;
+  top: 50%;
+  -ms-transform: skew(0deg, 26.57deg);
+  /* IE 9 */
+  -webkit-transform: skew(0deg, 26.57deg);
+  /* Safari */
+  transform: skew(0deg, 26.57deg);
+  /* Standard syntax */
+  transform-origin: 100% 0%;
+}
+.top-front-left .dot, .top-front-left .vertical-left .dot-up, .vertical-left .top-front-left .dot-up, .top-front-left .vertical-left .dot-down, .vertical-left .top-front-left .dot-down, .top-front-left .vertical-right .dot-up, .vertical-right .top-front-left .dot-up, .top-front-left .vertical-right .dot-down, .vertical-right .top-front-left .dot-down, .top-front-left .upper .dot-up, .upper .top-front-left .dot-up, .top-front-left .lower .dot-up, .lower .top-front-left .dot-up, .top-front-left .upper .dot-down, .upper .top-front-left .dot-down, .top-front-left .lower .dot-down, .lower .top-front-left .dot-down {
+  animation: dot-move2-left 4s linear infinite;
+  top: 37.5%;
+}
+
+.top-back-right {
+  left: 50%;
+  top: 0;
+  -ms-transform: skew(0deg, 26.57deg);
+  /* IE 9 */
+  -webkit-transform: skew(0deg, 26.57deg);
+  /* Safari */
+  transform: skew(0deg, 26.57deg);
+  /* Standard syntax */
+  transform-origin: 0% 100%;
+}
+.top-back-right .dot, .top-back-right .vertical-left .dot-up, .vertical-left .top-back-right .dot-up, .top-back-right .vertical-left .dot-down, .vertical-left .top-back-right .dot-down, .top-back-right .vertical-right .dot-up, .vertical-right .top-back-right .dot-up, .top-back-right .vertical-right .dot-down, .vertical-right .top-back-right .dot-down, .top-back-right .upper .dot-up, .upper .top-back-right .dot-up, .top-back-right .lower .dot-up, .lower .top-back-right .dot-up, .top-back-right .upper .dot-down, .upper .top-back-right .dot-down, .top-back-right .lower .dot-down, .lower .top-back-right .dot-down {
+  animation: dot-move3-left 4s linear infinite;
+  top: 37.5%;
+}
+
+.top-front-right {
+  left: 50%;
+  top: 50%;
+  -ms-transform: skew(0deg, -26.57deg);
+  /* IE 9 */
+  -webkit-transform: skew(0deg, -26.57deg);
+  /* Safari */
+  transform: skew(0deg, -26.57deg);
+  /* Standard syntax */
+  transform-origin: 0% 100%;
+}
+.top-front-right .dot, .top-front-right .vertical-left .dot-up, .vertical-left .top-front-right .dot-up, .top-front-right .vertical-left .dot-down, .vertical-left .top-front-right .dot-down, .top-front-right .vertical-right .dot-up, .vertical-right .top-front-right .dot-up, .top-front-right .vertical-right .dot-down, .vertical-right .top-front-right .dot-down, .top-front-right .upper .dot-up, .upper .top-front-right .dot-up, .top-front-right .lower .dot-up, .lower .top-front-right .dot-up, .top-front-right .upper .dot-down, .upper .top-front-right .dot-down, .top-front-right .lower .dot-down, .lower .top-front-right .dot-down {
+  animation: dot-move3-left 4s linear infinite;
+  top: 37.5%;
+}
+
+.bottom-back-left {
+  top: 25%;
+  left: 3%;
+  -ms-transform: skew(0, -26.57deg);
+  /* IE 9 */
+  -webkit-transform: skew(0, -26.57deg);
+  /* Safari */
+  transform: skew(0, -26.57deg);
+  /* Standard syntax */
+  transform-origin: 100% 0%;
+}
+.bottom-back-left .dot, .bottom-back-left .vertical-left .dot-up, .vertical-left .bottom-back-left .dot-up, .bottom-back-left .vertical-left .dot-down, .vertical-left .bottom-back-left .dot-down, .bottom-back-left .vertical-right .dot-up, .vertical-right .bottom-back-left .dot-up, .bottom-back-left .vertical-right .dot-down, .vertical-right .bottom-back-left .dot-down, .bottom-back-left .upper .dot-up, .upper .bottom-back-left .dot-up, .bottom-back-left .lower .dot-up, .lower .bottom-back-left .dot-up, .bottom-back-left .upper .dot-down, .upper .bottom-back-left .dot-down, .bottom-back-left .lower .dot-down, .lower .bottom-back-left .dot-down {
+  animation: dot-move2-left 4s linear infinite;
+  top: 37.5%;
+}
+
+.bottom-front-left {
+  left: 0;
+  top: 75%;
+  -ms-transform: skew(0deg, 26.57deg);
+  /* IE 9 */
+  -webkit-transform: skew(0deg, 26.57deg);
+  /* Safari */
+  transform: skew(0deg, 26.57deg);
+  /* Standard syntax */
+  transform-origin: 100% 0%;
+}
+.bottom-front-left .dot, .bottom-front-left .vertical-left .dot-up, .vertical-left .bottom-front-left .dot-up, .bottom-front-left .vertical-left .dot-down, .vertical-left .bottom-front-left .dot-down, .bottom-front-left .vertical-right .dot-up, .vertical-right .bottom-front-left .dot-up, .bottom-front-left .vertical-right .dot-down, .vertical-right .bottom-front-left .dot-down, .bottom-front-left .upper .dot-up, .upper .bottom-front-left .dot-up, .bottom-front-left .lower .dot-up, .lower .bottom-front-left .dot-up, .bottom-front-left .upper .dot-down, .upper .bottom-front-left .dot-down, .bottom-front-left .lower .dot-down, .lower .bottom-front-left .dot-down {
+  animation: dot-move2-left 4s linear infinite;
+  top: 37.5%;
+}
+
+.bottom-back-right {
+  top: 50%;
+  left: 50%;
+  -ms-transform: skew(0deg, 26.57deg);
+  /* IE 9 */
+  -webkit-transform: skew(0deg, 26.57deg);
+  /* Safari */
+  transform: skew(0deg, 26.57deg);
+  /* Standard syntax */
+  transform-origin: 100% 100%;
+}
+.bottom-back-right .dot, .bottom-back-right .vertical-left .dot-up, .vertical-left .bottom-back-right .dot-up, .bottom-back-right .vertical-left .dot-down, .vertical-left .bottom-back-right .dot-down, .bottom-back-right .vertical-right .dot-up, .vertical-right .bottom-back-right .dot-up, .bottom-back-right .vertical-right .dot-down, .vertical-right .bottom-back-right .dot-down, .bottom-back-right .upper .dot-up, .upper .bottom-back-right .dot-up, .bottom-back-right .lower .dot-up, .lower .bottom-back-right .dot-up, .bottom-back-right .upper .dot-down, .upper .bottom-back-right .dot-down, .bottom-back-right .lower .dot-down, .lower .bottom-back-right .dot-down {
+  animation: dot-move3-left 4s linear infinite;
+  top: 37.5%;
+}
+
+.bottom-front-right {
+  left: 50%;
+  top: 75%;
+  -ms-transform: skew(0deg, -26.57deg);
+  /* IE 9 */
+  -webkit-transform: skew(0deg, -26.57deg);
+  /* Safari */
+  transform: skew(0deg, -26.57deg);
+  /* Standard syntax */
+  transform-origin: 0% 100%;
+}
+.bottom-front-right .dot, .bottom-front-right .vertical-left .dot-up, .vertical-left .bottom-front-right .dot-up, .bottom-front-right .vertical-left .dot-down, .vertical-left .bottom-front-right .dot-down, .bottom-front-right .vertical-right .dot-up, .vertical-right .bottom-front-right .dot-up, .bottom-front-right .vertical-right .dot-down, .vertical-right .bottom-front-right .dot-down, .bottom-front-right .upper .dot-up, .upper .bottom-front-right .dot-up, .bottom-front-right .lower .dot-up, .lower .bottom-front-right .dot-up, .bottom-front-right .upper .dot-down, .upper .bottom-front-right .dot-down, .bottom-front-right .lower .dot-down, .lower .bottom-front-right .dot-down {
+  animation: dot-move3-left 4s linear infinite;
+  top: 37.5%;
+}
+
+@keyframes dot-move1-up {
+  0%, 12% {
+    visibility: hidden;
+  }
+  12.5% {
+    visibility: visible;
+    top: 50%;
+  }
+  25% {
+    top: 0%;
+  }
+  26%, 100% {
+    visibility: hidden;
+  }
+}
+@keyframes dot-move1-down {
+  0%, 12% {
+    visibility: hidden;
+  }
+  12.5% {
+    visibility: visible;
+    top: 50%;
+  }
+  25% {
+    top: 100%;
+  }
+  26%, 100% {
+    visibility: hidden;
+  }
+}
+@keyframes dot-move2-left {
+  0%, 25% {
+    left: -25%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+@keyframes dot-move3-down {
+  0%, 50% {
+    top: -25%;
+  }
+  62.5% {
+    top: 50%;
+  }
+  63%, 100% {
+    visibility: hidden;
+  }
+}
+@keyframes dot-move3-up {
+  0%, 50% {
+    top: 100%;
+  }
+  62.5% {
+    top: 50%;
+  }
+  63%, 100% {
+    visibility: hidden;
+  }
+}
+@keyframes dot-move3-left {
+  0%, 50% {
+    left: -25%;
+  }
+  75%, 100% {
+    left: 100%;
+  }
+}
+@keyframes dot-move4-down {
+  0%,  75% {
+    top: -25%;
+  }
+  87.5% {
+    top: 50%;
+  }
+  86%, 100% {
+    visibility: hidden;
+  }
+}
+@keyframes dot-move4-up {
+  0%,  75% {
+    top: 100%;
+  }
+  87.5% {
+    top: 50%;
+  }
+  86%, 100% {
+    visibility: hidden;
+  }
+}
+@keyframes circling {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
