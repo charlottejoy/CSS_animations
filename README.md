@@ -21,9 +21,11 @@ made after one at [Coding Artist](https://coding-artist.teachable.com/courses/15
 ## Morning Coffee loader
 [Based on image by Edward Nonay](https://dribbble.com/shots/3937558-Morning-Coffee)
 
+[See it live.](https://codepen.io/charlottejoy/full/KZmppY/)
+
 ![image](https://user-images.githubusercontent.com/17909419/34441049-502aa6c2-ec87-11e7-935b-04ea8c0fbf72.png)
 
-[See it live.](https://codepen.io/charlottejoy/full/KZmppY/)
+
 
 
 ### CodePen loader
