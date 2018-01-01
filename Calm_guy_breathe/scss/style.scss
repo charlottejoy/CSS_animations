@@ -1,0 +1,251 @@
+$background: #e4fcf4; //#64B5F6;//pink;
+$circle: #ffff80; //#FFFF8D;//#BBDEFB;//yellow;
+$circle2: #fce4ec; //green;
+$head: #b9f6ca; //#e1f7d5;
+$eyebrow: #757575; // #cc9797;
+$eye: white;
+$iris: #cfd8dc; //#c9c9ff;
+$pupil: black;
+$mouth: #ffab91; //#ffbdbd;
+$face-width: 80%;
+$face-height: 88.2%;
+$animation-time: 4s linear 0.25s infinite;
+$animation-time2: 12s linear 0.25s infinite;
+$animation-time3: 6s linear 0.25s infinite;
+
+.body, html {
+  overflow: hidden;
+  background: $background;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-family: "Great Vibes", cursive;
+}
+
+.container {
+  height: 96vmin;
+  width: 96vmin;
+  position: relative;
+  background: $circle;
+  animation: colour-change $animation-time2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.message {
+  position: absolute;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  font-size: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.head {
+  position: relative;
+  border-radius: 0 0 100% 30%;
+  height: $face-height;
+  width: $face-width;
+  margin-top: 2%;
+  left: -$face-width/2;
+  background: $head;
+  overflow: hidden;
+}
+
+.hair-row {
+  position: absolute;
+  width: 60%;
+  height: 11%;
+  top: -2%;
+  left: 40%;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+}
+
+.curl {
+  background: $eyebrow;
+  border-radius: 50%;
+  height: 100%;
+  width: 28%;
+}
+
+.eyebrow {
+  position: absolute;
+  top: 15%;
+  left: 56%;
+  height: 5%;
+  width: 34%;
+  background: $eyebrow;
+  z-index: 2;
+  border-radius: 50% 50% 0 0;
+}
+
+.eye {
+  position: absolute;
+  background: $eye;
+  top: 25%;
+  left: 62.5%;
+  width: 25%;
+  height: 10%;
+  overflow: hidden;
+  border-radius: 90% 0;
+  transform: rotate(10deg);
+}
+
+.iris {
+  position: absolute;
+  background: $iris;
+  border-radius: 50%;
+  left: 25%;
+  top: -10%;
+  height: 120%;
+  width: 50%;
+}
+
+.pupil {
+  position: absolute;
+  background: $pupil;
+  border-radius: 50%;
+  left: 20%;
+  top: 20%;
+  height: 60%;
+  width: 60%;
+}
+
+.lid {
+  position: absolute;
+  background: $head;
+  top: 15%; // will go to 25%;
+  left: 59%;
+  width: 30%;
+  height: 10%;
+  overflow: hidden;
+  border-radius: 0 0 50% 50%;
+  animation: blink $animation-time;
+}
+
+.nose {
+  position: absolute;
+  background: $head;
+  top: 30%;
+  left: 42.5%;
+  width: 15%;
+  height: 30%;
+  transform: skew(10deg);
+  border-radius: 0 0 20%;
+  box-shadow: 0.1vmin 0.1vmin 0.05vmin 0.05vmin black;
+}
+
+.mouth {
+  position: absolute;
+  top: 75%;
+  left: 30%;
+  width: 40%;
+  height: 4%;
+  background: $mouth;
+  border-radius: 0 0 100%; 
+}
+
+@keyframes blink {
+  0%,
+  10%,
+  90%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  30%,
+  70% {
+    box-shadow: none;
+  }
+  40%,
+  60% {
+    transform: translate(0, 9vmin);
+    box-shadow: 0 0.5vmin 0 0.05vmin black;
+  }
+}
+
+@keyframes colour-change {
+  0%,
+  90%,
+  100% {
+    background: $circle;
+  }
+  40%,
+  50% {
+    background: $circle2;
+  }
+}
+
+
+@keyframes dot-disappear1 {
+  0%,
+  10%,
+  40%,
+  100% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+}
+
+@keyframes dot-disappear2 {
+  0%,
+  40%,
+  70%,
+  100% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0;
+  }
+}
+
+@keyframes dot-disappear3 {
+  0%,
+  70%,
+  100% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .message {
+    font-size: 3em;
+  }
+}
+
+@media (max-width: 320px) {
+  .head {
+    display: none;
+  }
+  
+  .message {
+    left: 0;
+    text-align: center;
+    width: 100%;
+    font-size: 3em;
+  }
+
+  #dot1 {
+    animation: dot-disappear1 $animation-time3;
+  }
+  #dot2 {
+    animation: dot-disappear2 $animation-time3;
+  }
+  #dot3 {
+    animation: dot-disappear3 $animation-time3;
+  }
+}
