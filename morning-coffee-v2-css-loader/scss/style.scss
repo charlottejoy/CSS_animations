@@ -12,26 +12,21 @@ $flat-circle: 50% 50% 0 0;
 $sun-in:80%;
 $sun-space: 10%;
 $animation-properties: 1s infinite; //alternate;
-body{
-  background:$background;
+body,
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
+    background:$background;
 }
-@media (min-aspect-ratio: 1/8) {
-  .portrait-spacer {
-    height: 25vw;
-  }
-}
-@media (min-aspect-ratio: 5/4) {
-  .portrait-spacer {
-    height: 0px;
-  }
-}
-.container{
-  position: relative;
-  margin:auto;
-  width: 90vw;
-    height: 45vw;
 
+.container {
+  position: relative;
+  width: 100vmin;
+    height: 50vmin;
 }
 .cup{
   position: absolute;

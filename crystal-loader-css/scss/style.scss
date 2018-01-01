@@ -5,19 +5,20 @@ $dark-blue: #08517A;
 $med-blue: #6AC0D6;
 $background: #010F19;
 
-body{
+body, html{
   background: $background;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+ height: 100%;
+  width: 100%;
+  overflow: hidden;
   
 }
-.container{//change this for screen ratios
-// border: white 2px solid;
-  height: 40vh;
-  width: 60vh;
-  margin:auto;
-  margin-top: 30vh;
+.container{
+  height: 40vmin;
+  width: 60vmin;
   position: relative;
- // border-radius: 50%;
-  //overflow: hidden;
 }
 .left{
   width: 50%;
@@ -43,7 +44,6 @@ clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 .crystal1{
   position: absolute;
   height: 60%;
- // background: $light-blue;
   width: 10%;
   left: 30%;
   top: 40%;
@@ -65,7 +65,6 @@ clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 .crystal2{
   position: absolute;
   height: 100%;
- // background: $light-blue;
   width: 20%;
   left: 40%;
   .diamond{
@@ -87,7 +86,6 @@ clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 .crystal3{
   position: absolute;
   height: 70%;
-  //background: $dark-blue;
   width: 10%;
   left: 60%;
   top: 30%;

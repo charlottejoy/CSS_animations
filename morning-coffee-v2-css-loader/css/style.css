@@ -1,25 +1,18 @@
-body {
+body, html {
   background: #86C8CF;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
-@media (min-aspect-ratio: 1 / 8) {
-  .portrait-spacer {
-    height: 25vw;
-  }
-}
-@media (min-aspect-ratio: 5 / 4) {
-  .portrait-spacer {
-    height: 0px;
-  }
-}
 .container {
   position: relative;
-  margin: auto;
-  width: 90vw;
-  height: 45vw;
+   width: 100vmin;
+    height: 50vmin;
 }
-
 .cup {
   position: absolute;
   width: 40%;

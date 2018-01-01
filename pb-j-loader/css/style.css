@@ -14,6 +14,8 @@ html {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 80vmin;
+  height: 80vmin;
 }
 
 .circle {
@@ -150,18 +152,7 @@ html {
     z-index: 4;
   }
 }
-@media (max-aspect-ratio: 1 / 1) {
-  .container {
-    width: 80vw;
-    height: 80vw;
-  }
-}
-@media (min-aspect-ratio: 1 / 1) {
-  .container {
-    width: 80vh;
-    height: 80vh;
-  }
-}
+
 @media (max-width: 170px) {
   .circle {
     display: none;
