@@ -1,0 +1,276 @@
+$background: white;
+$container: white;
+$game-background: black;
+$flash: white;
+$blue: #304FFE;
+$red: #D50000;
+$yellow: #FFD600;
+$curve: 10%;
+$block-size:20%;//14.4vmin;//20%;
+$animation: 6s linear infinite;
+$border: black .5vmin solid;
+
+@mixin move ($x,$y){
+  -webkit-transform: translate($x,$y);
+        -ms-transform: translate($x,$y);
+            transform: translate($x,$y);
+}
+
+body, html{
+  background: $background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.container{
+  background: $container;
+  width: 90vmin;
+  height: 90vmin;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.game-area{
+  width: 80%;
+  height: 80%;
+  background: $game-background;
+  border-radius: $curve;
+  position: relative;
+  overflow: hidden;
+}
+
+.block{
+ // height: $block-size;
+  //width: $block-size;
+  height: 100%;
+  width: 25%;//$block-size;//$block-size;
+  border-radius: $curve;
+  border: $border;
+  box-sizing: border-box;
+  position: absolute;
+}
+
+.flash{
+  height: $block-size;
+  width:300%;
+  position: absolute;
+  background: white;
+  top:  $block-size*3;
+  left: -300%;
+  animation: flash $animation;
+  z-index: 4;
+}
+
+.row{
+  height: $block-size;
+  width: $block-size*4;
+  position: absolute;
+}
+
+.red-row{
+  @extend .row;
+  top: $block-size*4;
+  left: $block-size/2;
+  
+  .block{
+    background: $red;
+  }
+}
+.blue-fall-row{
+   @extend .row;
+  top: -$block-size*2;
+  left: $block-size/2;
+   animation: blue-fall $animation;
+  .block{
+      background: $blue;
+  }
+}
+.yellow-row{
+   @extend .row;
+  top: -$block-size*2;
+  left: $block-size*1.5;
+ animation: yellow-fall $animation;
+  .block{
+    background: $yellow; 
+  }
+}
+.blue-stay-row{
+   @extend .row;
+  top: $block-size*3;
+  left: $block-size/2;
+  animation: blue-stay $animation;
+  .block{
+     background: $blue;
+  }
+}
+
+
+.fall1{
+  left: 0;
+  top: 100%;
+}
+.fall2{
+  left: 0;
+}
+.fall3{
+  left: 25%;
+}
+.fall4{
+  left: 50%;
+}
+
+
+.y1{
+  left: 0;
+}
+.y2{
+  left: 25%;
+}
+.y3{
+  left: 50%
+}
+.y4{
+  left: 50%;
+  top: 100%;
+}
+
+.stay1{
+  left: 0;
+}
+.stay2{
+  left: 25%;
+}
+.stay3{
+  left: 50%;
+}
+
+.r1{
+  left: 0;
+}
+.r2{
+  left: 25%;//$block-size;
+}
+.r3{
+  left: 50%;//$block-size*2;
+}
+.r4{
+  left: 75%;//$block-size*3;
+}
+
+
+@media(max-width: 300px){
+  .game-area{
+   // background: none;
+  }
+}
+
+
+@keyframes yellow-fall{
+  0%{
+   // @include move(0,0)
+  }
+  20%, 24%{
+  @include move(0, 400%)
+
+  }
+
+  25%,54%{
+     @include move(0,500%)
+  }
+   55%,70%{
+     @include move(0,600%)
+  }
+  0%, 59%{
+    opacity: 1;
+  }
+  60%, 100%{
+    opacity: 0;
+  }
+}
+
+@keyframes blue-stay{
+  0%, 20%{
+   @include move(0, 0%) 
+  }
+   24%, 75%{
+   @include move(0, 400%)
+  }
+    76%, 100%{
+  //top: $block-size*3;
+  //left: $block-size/2;
+      @include move(0, 0)
+  }
+  74%, 76%{
+     opacity:0; 
+  }
+  77%, 100%{
+  opacity:1;  
+  }
+
+
+
+}
+
+@keyframes blue-fall{
+    0%, 30%{
+    @include move(0,0)
+  }
+  50%, 54%{
+   @include move(0, 400%)
+  }
+  55%, 80%{
+ @include move(0, 500%) 
+  }
+  100%{
+    @include move(0,0) 
+  }
+  0%, 78%{
+  opacity:1}
+  
+ 79%, 100%{opacity:0;
+  }
+}
+
+@keyframes flash{
+  0%, 20%{
+     @include move(0,0);
+  }
+  23%, 30%{
+     @include move(100%, 0);
+  }
+  30%, 35%{
+     @include move(300%, 0);
+  }
+  
+  0%, 28%{
+    opacity: 1;
+  }
+  36%, 49%{
+    opacity: 0;
+  }
+  
+  
+  40%, 50%{
+        @include move(0,0);
+  }
+  53%, 60%{
+     @include move(100%, 0);
+  }
+  60%,65%{
+     @include move(300%, 0);
+  }
+  50%, 64%{
+    opacity: 1;
+  }
+  64%, 100%{
+    opacity: 0;
+  }
+  100%{
+     @include move(0, 0);
+  }
+}
