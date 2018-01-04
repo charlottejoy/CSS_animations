@@ -14,7 +14,7 @@
 
 [See it live.](https://codepen.io/charlottejoy/full/aEwKMB/)
 
-![image](https://user-images.githubusercontent.com/17909419/34496056-06157bc4-efc6-11e7-9058-c53945781323.png)
+![image](https://user-images.githubusercontent.com/17909419/34546311-0273aa3a-f0c1-11e7-8b98-d6f8c455f87b.png)
 
 
 ### CodePen loader
