@@ -12,6 +12,7 @@ $flat-circle: 50% 50% 0 0;
 $sun-in:80%;
 $sun-space: 10%;
 $animation-properties: 1s infinite; //alternate;
+
 body,
 html {
   display: flex;
@@ -28,6 +29,8 @@ html {
   width: 100vmin;
     height: 50vmin;
 }
+
+
 .cup{
   position: absolute;
   width: 40%;
@@ -197,17 +200,22 @@ animation: glow1 $animation-properties;
   background: $accent1;
   top: 60%;
   display: flex;
-  display: -webkit-flex;
-  justify-content: space-between;
+ display: -webkit-flex;
+  justify-content:  flex-start;
+  padding-left: 10%;
  
 }
 
 .triangle{
-  width:0;
-  height: 0;
-  border-left: 3.6vw solid white;
-  border-right: 3.6vw solid white;
-  border-top: 3.6vw solid transparent;
+  position: relative;
+ width:20%;
+  height: 100%;
+  -webkit-clip-path: polygon(0 100%, 50% 0, 100% 100%);
+clip-path: polygon(0 100%, 50% 0, 100% 100%);
+  background: white;
+ /* border-left: 3.6vmin solid white;
+  border-right: 3.6vmin solid white;
+  border-top: 3.6vmin solid transparent;*/
   // container*height/width of cup* height/width as % of cup* width/height% (/2) for triangle sides
 }
 .band4{
