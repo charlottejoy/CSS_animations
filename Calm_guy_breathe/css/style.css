@@ -10,8 +10,8 @@
 }
 
 .container {
-  height: 96vmin;
-  width: 96vmin;
+  height: 90vmin;
+  width: 90vmin;
   position: relative;
   background: #ffff80;
   animation: colour-change 12s linear 0.25s infinite;
@@ -152,7 +152,7 @@
   }
   40%,
   60% {
-    transform: translate(0, 9vmin);
+    transform: translate(0, 8vmin);
     box-shadow: 0 0.5vmin 0 0.05vmin black;
   }
 }
