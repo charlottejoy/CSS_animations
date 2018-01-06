@@ -1,0 +1,120 @@
+//Nice colours: https://thumb1.shutterstock.com/display_pic_with_logo/1174655/404075740/stock-vector--african-set-set-of-african-drummers-drums-404075740.jpg
+// a different shape: https://dribbble.com/shots/2676085-April-25-African-Dance
+$background: black;
+$container-background: white;
+$colour1: #F7D40D;
+$colour2: #385EE7;
+$colour3: #F40806;
+$colour4: #E08C44;
+$colour5: #DD774C;
+$colour6: black;
+body, html{
+  background: $background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+div{
+  border-radius: 5%;
+}
+.container{
+  background: $container-background;
+  width: 90vmin;
+height: 90vmin;
+  position: relative;
+  /*display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;*/
+   font-size: 1.2em;
+}
+p{
+  text-align: center;
+}
+.colour-row{
+  width: 100%;
+  height: 10vmin;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background: $container-background;
+}
+
+.top{
+   background: $colour4;
+  height: 10%;
+  width: 68%;
+  position: absolute;
+  top: 5%;
+  left: 16%;
+z-index: 2;
+  border-radius: 50%;
+}
+.body-div{
+  //background: $colour2;
+  height: 80%;
+  width: 80%;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  overflow: hidden;
+}
+.body{
+   background: $colour3;
+  height: 140%;
+  width: 100%;
+  position: absolute;
+  top: -30%;
+  left: 0;
+  border-radius: 50%;
+}
+.drum-column1{
+  position: absolute;
+  width: 40%;
+  height: 60%;
+  background: $colour1;
+  top: 50%;
+}
+.colour{
+  width: 15%;
+  height: 90%;
+  
+}
+.colour1{
+  @extend .colour;
+   background: $colour1;
+}
+.colour2{
+  @extend .colour;
+   background: $colour2;
+}
+.colour3{
+  @extend .colour;
+   background: $colour3;
+}
+.colour4{
+  @extend .colour;
+   background: $colour4;
+}
+.colour5{
+  @extend .colour;
+   background: $colour5;
+}
+.colour6{
+  @extend .colour;
+   background: $colour6;
+}
+//estimate, change this
+@media(max-width:300px), (max-height: 300px){
+  .container{
+    font-size: 1em;
+  }
+}
+//estimate, change this
+@media(max-width:150px), (max-height: 150px){
+  
+}
