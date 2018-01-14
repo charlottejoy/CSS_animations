@@ -3,6 +3,14 @@
 ## CSS Animations
 
 
+### Cat Love Thaumatrope (thread spinner)
+
+[See it live.](https://codepen.io/charlottejoy/full/qpYOdJ/)
+
+![image](https://user-images.githubusercontent.com/17909419/34918773-6e329d36-f926-11e7-896c-3c1efdaf474d.png)
+
+[Orginally was in exercise repo](https://github.com/charlottejoy/exercises/tree/master/animation/thread-spinner-rotate)
+
 ### Peanut Butter and Jelly Loader
 
 [See it live.](https://codepen.io/charlottejoy/full/goWZdW/)
