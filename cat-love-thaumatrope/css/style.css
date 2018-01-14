@@ -1,0 +1,204 @@
+body,
+html {
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 0%;
+  margin: 0%;
+  overflow: hidden;
+  font-family: "helvetica", "Arial", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+h1 {
+  font-family: "Pacifico", cursive;
+}
+
+.heart {
+  height: 45vmin;
+}
+
+.cat {
+  height: 20vmin;
+}
+
+.card {
+  width: 60vmin;
+  height: 60vmin;
+  position: relative;
+  border-radius: 50%;
+  z-index: 2;
+}
+.card .string, .card .string-l, .card .string-r {
+  position: absolute;
+  background: #FEF9E7;
+  width: 32vmin;
+  z-index: 5;
+  height: 0.5vmin;
+  top: 29.75vmin;
+}
+.card .string-l {
+  left: -30vmin;
+}
+.card .string-r {
+  left: 58vmin;
+}
+.card .hole, .card .hole-l, .card .hole-r {
+  width: 5vmin;
+  height: 5vmin;
+}
+.card .hole-l {
+  margin-left: 1vmin;
+  z-index: 4;
+}
+.card .hole-r {
+  margin-right: 1vmin;
+  z-index: 4;
+}
+
+.hole, .card .hole-l, .card .hole-r, .shadow .hole-l, .shadow .hole-r {
+  border-radius: 50%;
+  background: white;
+}
+
+.front-image,
+.back-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back {
+  transform: rotateX(180deg);
+  animation: back-turn 2s linear 1s 3, back-turn 1s linear 7s 5, back-turn 0.5s linear 12s 5, back-turn 0.25s linear 14.5s 5, back-turn 0.05s linear 15.75s 50, back-turn 0.25s linear 18.25s 5, back-turn 0.5s linear 19.5s 5, back-turn 1s linear 22s 5, back-turn 2s linear 27s 5;
+}
+
+.front {
+  animation: front-turn 2s linear 1s 3, front-turn 1s linear 7s 5, front-turn 0.5s linear 12s 5, front-turn 0.25s linear 14.5s 5, front-turn 0.05s linear 15.75s 50, front-turn 0.25s linear 18.25s 5, front-turn 0.5s linear 19.5s 5, front-turn 1s linear 22s 5, front-turn 2s linear 27s 5;
+}
+
+.back,
+.front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #c7e6e1;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.shadow {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 45vmin;
+  height: 45vmin;
+  border-radius: 50%;
+  top: 21vmin;
+  left: 30vmin;
+  background: #f8f9f9;
+  animation: shadow 2s linear 1s 3, shadow 1s linear 7s 5, shadow 0.5s linear 12s 5, shadow 0.25s linear 14.5s 5, shadow 0.05s linear 15.75s 50, shadow 0.25s linear 18.25s 5, shadow 0.5s linear 19.5s 5, shadow 1s linear 22s 5, shadow 2s linear 27s 5;
+  z-index: -1;
+}
+.shadow .hole, .shadow .hole-l, .shadow .hole-r {
+  width: 3.75vmin;
+  height: 3.75vmin;
+}
+.shadow .hole-l {
+  margin-left: 0.75vmin;
+}
+.shadow .hole-r {
+  margin-right: 0.75vmin;
+}
+.shadow .string, .shadow .string-l, .shadow .string-r {
+  position: absolute;
+  background: #f8f9f9;
+  width: 24.5vmin;
+  z-index: 5;
+  height: 0.5vmin;
+  top: 22.25vmin;
+}
+.shadow .string-l {
+  left: -22.5vmin;
+}
+.shadow .string-r {
+  left: 43vmin;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  margin-top: 10vmin;
+}
+
+.credits {
+  width: 100vw;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #ec7063;
+  text-transform: uppercase;
+}
+
+@keyframes front-turn {
+  0%,
+  100% {
+    transform: rotateX(360deg);
+  }
+  50% {
+    transform: rotateX(180deg);
+  }
+}
+@keyframes back-turn {
+  0%,
+  100% {
+    transform: rotateX(180deg);
+  }
+  50% {
+    transform: rotateX(360deg);
+  }
+}
+@keyframes shadow {
+  0%,
+  50%,
+  100% {
+    transform: scale(1, 1);
+  }
+  25%,
+  75% {
+    transform: scale(1, 0);
+  }
+}
+@media (max-width: 500px), (max-height: 500px) {
+  body,
+  html {
+    font-size: 16px;
+  }
+}
+@media (max-width: 200px), (max-height: 200px) {
+  body,
+  html {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,251 @@
+//colours
+$background: white;
+$card: #c7e6e1; //lightblue;
+$link-color: #ec7063;//peachy
+$shadow: #f8f9f9;//light grey
+$string: #FEF9E7;//beige
+//sizes
+$card-size: 60vmin;
+$shadow-size: 0.75 * $card-size;
+$string-height: 0.5vmin;
+$string-overlap: 2vmin;
+
+//animation timings. At first, I had a lot in the keyframes. Now I'm chaining different speeds of the same animations with delays.
+$begin-slow: 2s linear 1s 3;
+$begin-slow2: 1s linear 7s 5;
+$slow-animation: 0.5s linear 12s 5;
+$med-animation: 0.25s linear 14.5s 5;
+$fast-animation: 0.05s linear 15.75s 50;
+$med-finish: 0.25s linear 18.25s 5;
+$slow-finish: 0.5s linear 19.5s 5;
+$so-slow: 1s linear 22s 5;
+$most-slow: 2s linear 27s 5;
+$box-shadow: 5vmin 5vmin 1vmin 0.5vmin;
+
+body,
+html {
+  background: $background;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 0%;
+  margin: 0%;
+  overflow: hidden;
+  font-family: "helvetica", "Arial", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+h1 {
+  font-family: "Pacifico", cursive;
+}
+
+.heart {
+  height: 45vmin;
+}
+
+.cat {
+  height: 20vmin;
+}
+
+.card {
+  width: $card-size;
+  height: $card-size;
+  position: relative;
+  border-radius: 50%;
+  z-index: 2;
+  .string {
+  position: absolute;
+  background: $string;
+  width: ($card-size/2) +$string-overlap;
+  z-index: 5;
+  height: $string-height;
+  top: (($card-size - $string-height)/2);
+}
+.string-l {
+  @extend .string;
+  left: -($card-size/2);
+}
+.string-r {
+  @extend .string;
+  left: $card-size - $string-overlap;
+}
+  .hole{
+      width: 5vmin;
+  height: 5vmin;
+  }
+  .hole-l {
+    @extend .hole;
+    margin-left: 1vmin;
+    z-index: 4;
+  }
+  .hole-r {
+    @extend .hole;
+    margin-right: 1vmin;
+    z-index: 4;
+  }
+}
+
+.hole {
+  border-radius: 50%;
+  background: $background;
+
+}
+
+.front-image,
+.back-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.back {
+  transform: rotateX(180deg);
+  animation: back-turn $begin-slow, back-turn $begin-slow2,
+    back-turn $slow-animation, back-turn $med-animation,
+    back-turn $fast-animation, back-turn $med-finish, back-turn $slow-finish,
+    back-turn $so-slow, back-turn $most-slow;
+}
+
+.front {
+  animation: front-turn $begin-slow, front-turn $begin-slow2,
+    front-turn $slow-animation, front-turn $med-animation,
+    front-turn $fast-animation, front-turn $med-finish, front-turn $slow-finish,
+    front-turn $so-slow, front-turn $most-slow;
+}
+
+.back,
+.front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: $card;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.shadow {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: $shadow-size;
+  height: $shadow-size;
+  border-radius: 50%;
+  top: $card-size * 0.35;
+  left: $card-size *0.5;
+  background: $shadow;
+  animation: shadow $begin-slow, shadow $begin-slow2, shadow $slow-animation,
+    shadow $med-animation, shadow $fast-animation, shadow $med-finish,
+    shadow $slow-finish, shadow $so-slow, shadow $most-slow;
+  z-index: -1;
+  .hole {
+    width: 5vmin*0.75;
+    height: 5vmin*0.75;
+  }
+  .hole-l {
+    @extend .hole;
+    margin-left: 0.75vmin;
+  }
+  .hole-r {
+    @extend .hole;
+    margin-right: 0.75vmin;
+  }
+  .string {
+    position: absolute;
+    background: $shadow;
+    width: ($shadow-size/2) +$string-overlap;
+    z-index: 5;
+    height: $string-height; 
+    top: (($shadow-size - $string-height)/2);
+  }
+  .string-l {
+    @extend .string;
+    left: -($shadow-size/2);
+  }
+  .string-r {
+    @extend .string;
+    left: $shadow-size - $string-overlap;
+  }
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  margin-top: 10vmin;
+}
+
+.credits {
+  width: 100vw;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: $link-color;
+  text-transform: uppercase;
+}
+
+
+@keyframes front-turn {
+  0%,
+  100% {
+    transform: rotateX(360deg);
+  }
+  50% {
+    transform: rotateX(180deg);
+  }
+}
+//these are the same, just inverted.
+@keyframes back-turn {
+  0%,
+  100% {
+    transform: rotateX(180deg);
+  }
+  50% {
+    transform: rotateX(360deg);
+  }
+}
+
+@keyframes shadow {
+  0%,
+  50%,
+  100% {
+    transform: scale(1, 1);
+  }
+  25%,
+  75% {
+    transform: scale(1, 0);
+  }
+}
+
+@media (max-width: 500px), (max-height: 500px) {
+  body,
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 200px), (max-height: 200px) {
+  body,
+  html {
+    font-size: 14px;
+  }
+}
