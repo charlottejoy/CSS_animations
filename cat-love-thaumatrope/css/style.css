@@ -87,10 +87,14 @@ h1 {
   transform: rotatex(180deg);
   /* IE 10, Fx 16+, Op 12.1+ */
   animation: back-turn 2s linear 1s 3, back-turn 1s linear 7s 5, back-turn 0.5s linear 12s 5, back-turn 0.25s linear 14.5s 5, back-turn 0.05s linear 15.75s 50, back-turn 0.25s linear 18.25s 5, back-turn 0.5s linear 19.5s 5, back-turn 1s linear 22s 5, back-turn 2s linear 27s 5;
+  -webkit-animation: back-turn 2s linear 1s 3, back-turn 1s linear 7s 5, back-turn 0.5s linear 12s 5, back-turn 0.25s linear 14.5s 5, back-turn 0.05s linear 15.75s 50, back-turn 0.25s linear 18.25s 5, back-turn 0.5s linear 19.5s 5, back-turn 1s linear 22s 5, back-turn 2s linear 27s 5;
+  -ms-animation: back-turn 2s linear 1s 3, back-turn 1s linear 7s 5, back-turn 0.5s linear 12s 5, back-turn 0.25s linear 14.5s 5, back-turn 0.05s linear 15.75s 50, back-turn 0.25s linear 18.25s 5, back-turn 0.5s linear 19.5s 5, back-turn 1s linear 22s 5, back-turn 2s linear 27s 5;
 }
 
 .front {
   animation: front-turn 2s linear 1s 3, front-turn 1s linear 7s 5, front-turn 0.5s linear 12s 5, front-turn 0.25s linear 14.5s 5, front-turn 0.05s linear 15.75s 50, front-turn 0.25s linear 18.25s 5, front-turn 0.5s linear 19.5s 5, front-turn 1s linear 22s 5, front-turn 2s linear 27s 5;
+  -webkit-animation: front-turn 2s linear 1s 3, front-turn 1s linear 7s 5, front-turn 0.5s linear 12s 5, front-turn 0.25s linear 14.5s 5, front-turn 0.05s linear 15.75s 50, front-turn 0.25s linear 18.25s 5, front-turn 0.5s linear 19.5s 5, front-turn 1s linear 22s 5, front-turn 2s linear 27s 5;
+  -ms-animation: front-turn 2s linear 1s 3, front-turn 1s linear 7s 5, front-turn 0.5s linear 12s 5, front-turn 0.25s linear 14.5s 5, front-turn 0.05s linear 15.75s 50, front-turn 0.25s linear 18.25s 5, front-turn 0.5s linear 19.5s 5, front-turn 1s linear 22s 5, front-turn 2s linear 27s 5;
 }
 
 .back,
@@ -146,6 +150,25 @@ a {
     /* IE 10, Fx 16+, Op 12.1+ */
   }
 }
+@-webkit-keyframes front-turn {
+  0%,
+  100% {
+    -webkit-transform: rotatex(360deg);
+    /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: rotatex(360deg);
+    /* IE 9 */
+    transform: rotatex(360deg);
+    /* IE 10, Fx 16+, Op 12.1+ */
+  }
+  50% {
+    -webkit-transform: rotatex(180deg);
+    /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: rotatex(180deg);
+    /* IE 9 */
+    transform: rotatex(180deg);
+    /* IE 10, Fx 16+, Op 12.1+ */
+  }
+}
 @keyframes back-turn {
   0%,
   100% {
@@ -165,7 +188,26 @@ a {
     /* IE 10, Fx 16+, Op 12.1+ */
   }
 }
-@media (min-width: 900px), (min-height: 900px) {
+@-webkit-keyframes back-turn {
+  0%,
+  100% {
+    -webkit-transform: rotatex(180deg);
+    /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: rotatex(180deg);
+    /* IE 9 */
+    transform: rotatex(180deg);
+    /* IE 10, Fx 16+, Op 12.1+ */
+  }
+  50% {
+    -webkit-transform: rotatex(360deg);
+    /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: rotatex(360deg);
+    /* IE 9 */
+    transform: rotatex(360deg);
+    /* IE 10, Fx 16+, Op 12.1+ */
+  }
+}
+@media (min-width: 600px) and (min-height: 600px) {
   .shadow {
     position: absolute;
     display: flex;
@@ -177,8 +219,10 @@ a {
     top: 21vmin;
     left: 30vmin;
     background: #f8f9f9;
-    animation: shadow 2s linear 1s 3, shadow 1s linear 7s 5, shadow 0.5s linear 12s 5, shadow 0.25s linear 14.5s 5, shadow 0.05s linear 15.75s 50, shadow 0.25s linear 18.25s 5, shadow 0.5s linear 19.5s 5, shadow 1s linear 22s 5, shadow 2s linear 27s 5;
     z-index: -1;
+    animation: shadow 2s linear 1s 3, shadow 1s linear 7s 5, shadow 0.5s linear 12s 5, shadow 0.25s linear 14.5s 5, shadow 0.05s linear 15.75s 50, shadow 0.25s linear 18.25s 5, shadow 0.5s linear 19.5s 5, shadow 1s linear 22s 5, shadow 2s linear 27s 5;
+    -webkit-animation: shadow 2s linear 1s 3, shadow 1s linear 7s 5, shadow 0.5s linear 12s 5, shadow 0.25s linear 14.5s 5, shadow 0.05s linear 15.75s 50, shadow 0.25s linear 18.25s 5, shadow 0.5s linear 19.5s 5, shadow 1s linear 22s 5, shadow 2s linear 27s 5;
+    -ms-animation: shadow 2s linear 1s 3, shadow 1s linear 7s 5, shadow 0.5s linear 12s 5, shadow 0.25s linear 14.5s 5, shadow 0.05s linear 15.75s 50, shadow 0.25s linear 18.25s 5, shadow 0.5s linear 19.5s 5, shadow 1s linear 22s 5, shadow 2s linear 27s 5;
   }
   .shadow .shadow-hole, .shadow .hole-l, .shadow .hole-r {
     width: 3.75vmin;
@@ -226,11 +270,36 @@ a {
       /* IE 10, Fx 16+, Op 12.1+ */
     }
   }
+  @-webkit-keyframes shadow {
+    0%,
+  50%,
+  100% {
+      -webkit-transform: scale(1, 1);
+      /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+      -ms-transform: scale(1, 1);
+      /* IE 9 */
+      transform: scale(1, 1);
+      /* IE 10, Fx 16+, Op 12.1+ */
+    }
+    25%,
+  75% {
+      -webkit-transform: scale(1, 0);
+      /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+      -ms-transform: scale(1, 0);
+      /* IE 9 */
+      transform: scale(1, 0);
+      /* IE 10, Fx 16+, Op 12.1+ */
+    }
+  }
 }
 @media (max-width: 500px), (max-height: 500px) {
   body,
   html {
     font-size: 16px;
+  }
+
+  h1 {
+    display: none;
   }
 }
 @media (max-width: 200px), (max-height: 200px) {

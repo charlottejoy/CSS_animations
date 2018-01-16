@@ -130,10 +130,30 @@ h1 {
     back-turn $slow-animation, back-turn $med-animation,
     back-turn $fast-animation, back-turn $med-finish, back-turn $slow-finish,
     back-turn $so-slow, back-turn $most-slow;
+  
+  -webkit-animation: back-turn $begin-slow, back-turn $begin-slow2,
+    back-turn $slow-animation, back-turn $med-animation,
+    back-turn $fast-animation, back-turn $med-finish, back-turn $slow-finish,
+    back-turn $so-slow, back-turn $most-slow;
+  
+  -ms-animation: back-turn $begin-slow, back-turn $begin-slow2,
+    back-turn $slow-animation, back-turn $med-animation,
+    back-turn $fast-animation, back-turn $med-finish, back-turn $slow-finish,
+    back-turn $so-slow, back-turn $most-slow;
 }
 
 .front {
   animation: front-turn $begin-slow, front-turn $begin-slow2,
+    front-turn $slow-animation, front-turn $med-animation,
+    front-turn $fast-animation, front-turn $med-finish, front-turn $slow-finish,
+    front-turn $so-slow, front-turn $most-slow;
+  
+  -webkit-animation:front-turn $begin-slow, front-turn $begin-slow2,
+    front-turn $slow-animation, front-turn $med-animation,
+    front-turn $fast-animation, front-turn $med-finish, front-turn $slow-finish,
+    front-turn $so-slow, front-turn $most-slow;
+  
+    -ms-animation: front-turn $begin-slow, front-turn $begin-slow2,
     front-turn $slow-animation, front-turn $med-animation,
     front-turn $fast-animation, front-turn $med-finish, front-turn $slow-finish,
     front-turn $so-slow, front-turn $most-slow;
@@ -184,6 +204,16 @@ a {
     @include rotate(180deg);
   }
 }
+
+@-webkit-keyframes front-turn {
+  0%,
+  100% {
+    @include rotate(360deg);
+  }
+  50% {
+    @include rotate(180deg);
+  }
+}
 //these are the same, just inverted.
 @keyframes back-turn {
   0%,
@@ -195,9 +225,19 @@ a {
   }
 }
 
+@-webkit-keyframes back-turn {
+  0%,
+  100% {
+    @include rotate(180deg);
+  }
+  50% {
+    @include rotate(360deg);
+  }
+}
 
 
-@media (min-width: 900px), (min-height: 900px){
+
+@media (min-width: 600px) and (min-height: 600px){
   
 .shadow {
   position: absolute;
@@ -210,12 +250,21 @@ a {
   top: $card-size * 0.35;
   left: $card-size *0.5;
   background: $shadow;
+   z-index: -1;
   animation: shadow $begin-slow, shadow $begin-slow2, shadow $slow-animation,
     shadow $med-animation, shadow $fast-animation, shadow $med-finish,
     shadow $slow-finish, shadow $so-slow, shadow $most-slow;
-  z-index: -1;
+  
+  -webkit-animation: shadow $begin-slow, shadow $begin-slow2, shadow $slow-animation,
+    shadow $med-animation, shadow $fast-animation, shadow $med-finish,
+    shadow $slow-finish, shadow $so-slow, shadow $most-slow;
+ 
+    -ms-animation: shadow $begin-slow, shadow $begin-slow2, shadow $slow-animation,
+    shadow $med-animation, shadow $fast-animation, shadow $med-finish,
+    shadow $slow-finish, shadow $so-slow, shadow $most-slow;
   
   .shadow-hole {//needed to make a new class to extend it later from within this media query
+    
     width: 5vmin*0.75;
     height: 5vmin*0.75;
   }
@@ -256,12 +305,27 @@ a {
   }
 }
   
+  @-webkit-keyframes shadow {
+  0%,
+  50%,
+  100% {
+    @include scale(1,1);
+  }
+  25%,
+  75% {
+      @include scale(1,0);
+  }
+}
+  
 }
 
 @media (max-width: 500px), (max-height: 500px) {
   body,
   html {
     font-size: 16px;
+  }
+  h1{
+    display: none;
   }
 }
 
